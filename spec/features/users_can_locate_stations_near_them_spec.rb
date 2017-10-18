@@ -13,6 +13,6 @@ describe "user can search for stations near them" do
     expect(page).to have_content(station_1.address)
     expect(page).to have_content(station_1.fuel_types)
     expect(page).to have_content(station_1.distance)
-    expect(page).to have_content(station_1.access_time)
+    expect(page).to have_content(station_1.access_times)
   end
 end
