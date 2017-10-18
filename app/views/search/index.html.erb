@@ -1,8 +1,8 @@
 <h1> Stations Near You </h1>
 <% @stations.each do |station| %>
-  <%= station.name %>
-  <%= station.address %>
-  <%= station.fuel_types %>
+  <p><%= station.name %></p>
+  <p><%= station.address %></p>
+  <p><%= station.fuel_types %></p>
 
-  <%= station.access_times %>
+  <p><%= station.access_times %></p>
 <% end %>
