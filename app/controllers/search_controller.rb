@@ -9,6 +9,11 @@ class SearchController < ApplicationController
       req.params['radius'] = '6.0'
     end
     raw_info = JSON.parse(response.body)
-    @stations = StationService.new(raw_info).sort_by_distance
+    station_info = raw_info["fuel_stations"]
+    station_info.each do |station|
+      Station.create(name: station.station_name, address: station.street_address, fuel_types: station.fuel_type_code,
+                      access_times: station.access_days_time)
+    end
+    @stations = Station.all
   end
 end
